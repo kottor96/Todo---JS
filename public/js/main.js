@@ -59,10 +59,18 @@ divForm.addEventListener('click', (e)=>{
         case buttonFini:
             break;
         case buttonAll:
+            divContent.appendChild(Todo.todoListe[0])
+            console.log(Todo.todoListe);
+            
             break;
         case buttonPasfini:
+            Todo.todoListe[0].remove()
+            console.log(Todo.todoListe);
+            
             break;
         default:
             break;
     }
+
 })
+

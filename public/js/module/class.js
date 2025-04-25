@@ -1,11 +1,9 @@
 import { divContent } from "../main.js";
 class Todo {
-    static index = 0
+    static todoListe = []
     constructor(contenu) {
         this.contenu = contenu
-        this.index = Todo.index
         this.etat = false
-        Todo.index++
         this.createTodo()
     }
     createTodo(){
@@ -22,6 +20,8 @@ class Todo {
         let div_btn=document.createElement('div')
         
         divContent.appendChild(divTodo)
+        Todo.todoListe.push(divTodo)
+        
         divTodo.append(pTodo,div_btn)
         div_btn.append(buttonDone,buttonModif,buttonSupprimer)
 
@@ -43,6 +43,7 @@ class Todo {
                     break; 
                 case buttonSupprimer:
                     this.supprimer(divTodo)
+                    
                     break; 
                 default:
                     break;
