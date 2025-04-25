@@ -30,6 +30,7 @@ class Todo {
         buttonDone.appendChild(buttonDone_content)
         buttonModif.appendChild(buttonModif_content)
         buttonSupprimer.appendChild(buttonSupprimer_content)
+        divTodo.classList.add('carte-todo')
 
         divContent.addEventListener('click', (e)=>{
             switch (e.target) {

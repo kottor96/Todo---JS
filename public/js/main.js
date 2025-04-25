@@ -1,6 +1,7 @@
 // import
 import { Todo } from "./module/class.js";
 import {all,fini,Pasfini,add} from "./module/fonction.js"
+import { style } from "./module/style.js";
 
 // get element
 let body = document.getElementsByTagName('body')[0];
@@ -29,6 +30,11 @@ let buttonAll_content = document.createTextNode("All")
 let buttonFini_content = document.createTextNode("Fini")
 let buttonPasfini_content = document.createTextNode("Pas Fini")
 
+
+
+// head
+document.head.appendChild(style);
+
 // header
 body.appendChild(header)
 header.appendChild(h1)
@@ -41,9 +47,6 @@ buttonFini.appendChild(buttonFini_content)
 buttonPasfini.appendChild(buttonPasfini_content)
 // div liste
 main.appendChild(divContent)
-
-
-
 
 
 divForm.addEventListener('click', (e)=>{
