@@ -42,9 +42,19 @@ buttonPasfini.appendChild(buttonPasfini_content)
 main.appendChild(divContent)
 
 
+
 // function
 function add(contenu){
     let tudo = new Todo(contenu)
+}
+function fini(){
+    Todo.todoListe.forEach(element => {
+        if (!element.contenu.etat) {
+            element.div.remove()
+        } else {
+            divContent.appendChild(element.div)
+        }
+    });
 }
 
 divForm.addEventListener('click', (e)=>{
@@ -57,16 +67,24 @@ divForm.addEventListener('click', (e)=>{
             break;
             }
         case buttonFini:
+            fini();
             break;
         case buttonAll:
-            // divContent.appendChild(Todo.todoListe[0])
-            // console.log(Todo.todoListe);
-            
+            // for (const element of Todo.todoListe) {
+            //     divContent.appendChild(element)
+            // }
+            Todo.todoListe.forEach(element => {
+                divContent.appendChild(element.div)
+            });
             break;
         case buttonPasfini:
-            // Todo.todoListe[0].remove()
-            // console.log(Todo.todoListe);
-            
+            Todo.todoListe.forEach(element => {
+                if (element.contenu.etat) {
+                    element.div.remove()
+                } else {
+                    divContent.appendChild(element.div)
+                }
+            });
             break;
         default:
             break;

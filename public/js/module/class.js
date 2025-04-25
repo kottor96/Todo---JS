@@ -35,15 +35,15 @@ class Todo {
             switch (e.target) {
                 case buttonDone:
                     this.etat=true
-                    console.log(this.etat);
+                    // Todo.todoListe[Todo.todoListe.indexOf(divTodo)].contenu=this.etat;
+                    console.log(Todo.todoListe[0].contenu);
+                    // Todo.todoListe[0].contenu
                     break;
                 case buttonModif:
-                    console.log('je vais faire une modif');
                     this.modifier(div_btn,buttonModif,buttonSupprimer,pTodo)
                     break; 
                 case buttonSupprimer:
                     this.supprimer(divTodo)
-                    Todo.todoListe.splice(Todo.todoListe.indexOf(divTodo),1)
                     break; 
                 default:
                     break;
@@ -52,6 +52,7 @@ class Todo {
     };
     supprimer(div){
         div.remove()
+        Todo.todoListe.splice(Todo.todoListe.indexOf(div),1)
     }
     modifier(div,buttonR,buttonP,text){
         let inputModif = document.createElement('input');
