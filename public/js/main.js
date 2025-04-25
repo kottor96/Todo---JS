@@ -13,6 +13,7 @@ let h1 = document.createElement('h1')
 // div 
 let div_grosButton = document.createElement('div')
 let divForm = document.createElement('div')
+let divInput = document.createElement('div')
 let divFormContent = document.createElement('div')
 export let divContent = document.createElement('div')
 // input
@@ -39,7 +40,8 @@ document.head.appendChild(style);
 
 // main +div content
 body.appendChild(main).appendChild(divForm).append(h1,divFormContent)
-divFormContent.append(inputForm,buttonAdd,div_grosButton)
+divFormContent.append(divInput,div_grosButton)
+divInput.append(inputForm,buttonAdd)
 h1.appendChild(h1_content)
 div_grosButton.append(buttonAll,buttonFini,buttonPasfini);
 buttonAdd.appendChild(buttonAdd_content);
@@ -49,6 +51,14 @@ buttonPasfini.appendChild(buttonPasfini_content);
 // div liste
 main.appendChild(divContent);
 
+// id
+divForm.id='form'
+divFormContent.id='mainContent'
+divInput.id='put'
+div_grosButton.id='but'
+// class
+divInput.classList.add('miseForm')
+div_grosButton.classList.add('miseForm')
 
 divForm.addEventListener('click', (e)=>{
     switch (e.target) {

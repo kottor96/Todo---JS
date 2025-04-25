@@ -16,6 +16,7 @@ class Todo {
         let buttonSupprimer = document.createElement('button')
 
         let buttonDone_content = document.createTextNode('Done')
+        let buttonDone_contentBis = document.createTextNode('UnDone')
         let buttonSupprimer_content = document.createTextNode('Supprimer')
         let buttonModif_content = document.createTextNode('Modifier')
         let div_btn=document.createElement('div')
@@ -34,15 +35,23 @@ class Todo {
         buttonSupprimer.appendChild(buttonSupprimer_content)
         // class
         div_btn.classList.add('btn-todo')
-        divTodo.classList.add('carte-todo')
+        divTodo.classList.add('carte-todoNot')
 
         divContent.addEventListener('click', (e)=>{
             switch (e.target) {
                 case buttonDone:
-                    this.etat=true
-                    // Todo.todoListe[Todo.todoListe.indexOf(divTodo)].contenu=this.etat;
-                    console.log(Todo.todoListe[0].contenu);
-                    // Todo.todoListe[0].contenu
+                    buttonDone.innerText=''
+                    if (this.etat) {
+                        buttonDone.appendChild(buttonDone_content)
+                        divTodo.classList='carte-todoNot'
+                        this.etat=false
+                    } else {
+                        buttonDone.appendChild(buttonDone_contentBis)
+                        divTodo.classList='carte-todo'
+                        this.etat=true
+                    }
+                    
+                    
                     break;
                 case buttonModif:
                     this.modifier(div_btn,buttonModif,buttonSupprimer,pTodo)
@@ -62,7 +71,7 @@ class Todo {
     modifier(div,buttonR,buttonP,text){
         let inputModif = document.createElement('input');
         let buttonConfirm = document.createElement('button');
-        let buttonConfirm_content = document.createTextNode('Confirmer')
+        let buttonConfirm_content = document.createTextNode('Confirmer');
         console.log(buttonR);
         
         buttonR.remove();
