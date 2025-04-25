@@ -1,5 +1,6 @@
 // import
 import { Todo } from "./module/class.js";
+import {all,fini,Pasfini,add} from "./module/fonction.js"
 
 // get element
 let body = document.getElementsByTagName('body')[0];
@@ -43,19 +44,7 @@ main.appendChild(divContent)
 
 
 
-// function
-function add(contenu){
-    let tudo = new Todo(contenu)
-}
-function fini(){
-    Todo.todoListe.forEach(element => {
-        if (!element.contenu.etat) {
-            element.div.remove()
-        } else {
-            divContent.appendChild(element.div)
-        }
-    });
-}
+
 
 divForm.addEventListener('click', (e)=>{
     switch (e.target) {
@@ -70,21 +59,10 @@ divForm.addEventListener('click', (e)=>{
             fini();
             break;
         case buttonAll:
-            // for (const element of Todo.todoListe) {
-            //     divContent.appendChild(element)
-            // }
-            Todo.todoListe.forEach(element => {
-                divContent.appendChild(element.div)
-            });
+            all();
             break;
         case buttonPasfini:
-            Todo.todoListe.forEach(element => {
-                if (element.contenu.etat) {
-                    element.div.remove()
-                } else {
-                    divContent.appendChild(element.div)
-                }
-            });
+            Pasfini()
             break;
         default:
             break;
