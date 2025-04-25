@@ -45,5 +45,24 @@ main.appendChild(divContent)
 // function
 function add(contenu){
     let tudo = new Todo(contenu)
-    tudo.createTodo()
 }
+
+divForm.addEventListener('click', (e)=>{
+    switch (e.target) {
+        case buttonAdd:
+            if (!inputForm.value) {
+                alert('rentrer une valeur valide')
+            } else {
+                add(inputForm.value)
+            break;
+            }
+        case buttonFini:
+            break;
+        case buttonAll:
+            break;
+        case buttonPasfini:
+            break;
+        default:
+            break;
+    }
+})
