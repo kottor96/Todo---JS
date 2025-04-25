@@ -10,6 +10,7 @@ class Todo {
         let divTodo = document.createElement('div')
         let pTodo = document.createElement('p')
         let pTodo_content = document.createTextNode(this.contenu)
+
         let buttonDone = document.createElement('button')
         let buttonModif = document.createElement('button')
         let buttonSupprimer = document.createElement('button')
@@ -24,12 +25,15 @@ class Todo {
         // div
         divTodo.append(pTodo,div_btn)
         div_btn.append(buttonDone,buttonModif,buttonSupprimer)
+
         // pcontent
         pTodo.appendChild(pTodo_content)
         // btn
         buttonDone.appendChild(buttonDone_content)
         buttonModif.appendChild(buttonModif_content)
         buttonSupprimer.appendChild(buttonSupprimer_content)
+        // class
+        div_btn.classList.add('btn-todo')
         divTodo.classList.add('carte-todo')
 
         divContent.addEventListener('click', (e)=>{

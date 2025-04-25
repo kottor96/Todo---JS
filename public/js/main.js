@@ -11,7 +11,8 @@ let header = document.createElement('header');
 let main = document.createElement('main');
 // h1
 let h1 = document.createElement('h1')
-// div form
+// div 
+let div_grosButton = document.createElement('div')
 let divForm = document.createElement('div')
 export let divContent = document.createElement('div')
 // input
@@ -40,13 +41,14 @@ body.appendChild(header)
 header.appendChild(h1)
 h1.appendChild(h1_content)
 // main +div content
-body.appendChild(main).appendChild(divForm).append(inputForm,buttonAdd,buttonAll,buttonFini,buttonPasfini)
-buttonAdd.appendChild(buttonAdd_content)
-buttonAll.appendChild(buttonAll_content)
-buttonFini.appendChild(buttonFini_content)
-buttonPasfini.appendChild(buttonPasfini_content)
+body.appendChild(main).appendChild(divForm).append(inputForm,buttonAdd,div_grosButton);
+div_grosButton.append(buttonAll,buttonFini,buttonPasfini);
+buttonAdd.appendChild(buttonAdd_content);
+buttonAll.appendChild(buttonAll_content);
+buttonFini.appendChild(buttonFini_content);
+buttonPasfini.appendChild(buttonPasfini_content);
 // div liste
-main.appendChild(divContent)
+main.appendChild(divContent);
 
 
 divForm.addEventListener('click', (e)=>{
