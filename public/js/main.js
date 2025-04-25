@@ -1,3 +1,6 @@
+// import
+import { Todo } from "./module/class.js";
+
 // get element
 let body = document.getElementsByTagName('body')[0];
 
@@ -8,7 +11,7 @@ let main = document.createElement('main');
 let h1 = document.createElement('h1')
 // div form
 let divForm = document.createElement('div')
-let div_content = document.createElement('div')
+export let divContent = document.createElement('div')
 // input
 let inputForm = document.createElement('input')
 // button
@@ -36,3 +39,6 @@ buttonAll.appendChild(buttonAll_content)
 buttonFini.appendChild(buttonFini_content)
 buttonPasfini.appendChild(buttonPasfini_content)
 // div liste
+main.appendChild(divContent)
+let test = new Todo("test")
+test.createTodo()
