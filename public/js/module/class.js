@@ -39,7 +39,7 @@ class Todo {
                     break;
                 case buttonModif:
                     console.log('je vais faire une modif');
-                    this.modifier(div_btn,buttonModif)
+                    this.modifier(div_btn,buttonModif,buttonSupprimer,pTodo)
                     break; 
                 case buttonSupprimer:
                     this.supprimer(divTodo)
@@ -52,12 +52,27 @@ class Todo {
     supprimer(div){
         div.remove()
     }
-    modifier(div,buttonR,buttonP){
-        let input_modif = document.createElement('input');
-        let button_confirm = document.createElement('button');
-        buttonP.remove();
-        div.insertBefore(input_modif,buttonP);
-        buttonR.innerText=confirmer;
+    modifier(div,buttonR,buttonP,text){
+        let inputModif = document.createElement('input');
+        let buttonConfirm = document.createElement('button');
+        let buttonConfirm_content = document.createTextNode('Confirmer')
+        console.log(buttonR);
+        
+        buttonR.remove();
+        div.insertBefore(buttonConfirm,buttonP);
+        div.insertBefore(inputModif,buttonConfirm);
+        buttonConfirm.appendChild(buttonConfirm_content)        
+        buttonConfirm.addEventListener('click',()=>{
+            if (!inputModif.value) {
+                alert('ecris un truc')
+            } else {
+                this.contenu=inputModif.value                
+                text.textContent = this.contenu
+                buttonConfirm.remove()
+                inputModif.remove()
+                div.insertBefore(buttonR,buttonP)
+            }
+        })
     }
 }
 
