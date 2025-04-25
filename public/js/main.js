@@ -7,13 +7,13 @@ import { style } from "./module/style.js";
 let body = document.getElementsByTagName('body')[0];
 
 // create
-let header = document.createElement('header');
 let main = document.createElement('main');
 // h1
 let h1 = document.createElement('h1')
 // div 
 let div_grosButton = document.createElement('div')
 let divForm = document.createElement('div')
+let divFormContent = document.createElement('div')
 export let divContent = document.createElement('div')
 // input
 let inputForm = document.createElement('input')
@@ -36,12 +36,11 @@ let buttonPasfini_content = document.createTextNode("Pas Fini")
 // head
 document.head.appendChild(style);
 
-// header
-body.appendChild(header)
-header.appendChild(h1)
-h1.appendChild(h1_content)
+
 // main +div content
-body.appendChild(main).appendChild(divForm).append(inputForm,buttonAdd,div_grosButton);
+body.appendChild(main).appendChild(divForm).append(h1,divFormContent)
+divFormContent.append(inputForm,buttonAdd,div_grosButton)
+h1.appendChild(h1_content)
 div_grosButton.append(buttonAll,buttonFini,buttonPasfini);
 buttonAdd.appendChild(buttonAdd_content);
 buttonAll.appendChild(buttonAll_content);

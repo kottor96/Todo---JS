@@ -1,17 +1,21 @@
 //css
 let style = document.createElement('style')
 style.innerHTML = `
+    body{
+        background-image: linear-gradient(to right,blue,cyan);
+    }
     .carte-todo{
         background-color: red;
         color: white;
-        padding: 10px 20px;
+        margin: 30px 20px;
+        padding: 20px;
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
         align-item: center;
     }
     .carte-todo p{
-        font-size: 
+        font-size: 1em
     }
     .btn-todo{
         display: flex;
