@@ -20,13 +20,13 @@ class Todo {
         let div_btn=document.createElement('div')
         
         divContent.appendChild(divTodo)
-        Todo.todoListe.push(divTodo)
-        
+        Todo.todoListe.push({div:divTodo,contenu:this})
+        // div
         divTodo.append(pTodo,div_btn)
         div_btn.append(buttonDone,buttonModif,buttonSupprimer)
-
+        // pcontent
         pTodo.appendChild(pTodo_content)
-
+        // btn
         buttonDone.appendChild(buttonDone_content)
         buttonModif.appendChild(buttonModif_content)
         buttonSupprimer.appendChild(buttonSupprimer_content)
@@ -43,7 +43,7 @@ class Todo {
                     break; 
                 case buttonSupprimer:
                     this.supprimer(divTodo)
-                    
+                    Todo.todoListe.splice(Todo.todoListe.indexOf(divTodo),1)
                     break; 
                 default:
                     break;
