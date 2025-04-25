@@ -1,7 +1,11 @@
 import { divContent } from "../main.js";
 class Todo {
+    static index = 0
     constructor(contenu) {
         this.contenu = contenu
+        this.index = Todo.index
+        Todo.index++
+        this.createTodo()
     }
     createTodo(){
         let pTodo = document.createElement('p')

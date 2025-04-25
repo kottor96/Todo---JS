@@ -40,5 +40,10 @@ buttonFini.appendChild(buttonFini_content)
 buttonPasfini.appendChild(buttonPasfini_content)
 // div liste
 main.appendChild(divContent)
-let test = new Todo("test")
-test.createTodo()
+
+
+// function
+function add(contenu){
+    let tudo = new Todo(contenu)
+    tudo.createTodo()
+}
