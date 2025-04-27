@@ -19,22 +19,26 @@ style.innerHTML = `
         justify-content: center;
     }
     .carte-todo{
-        background-color: green;
+        background-color: #1976D2;
+        transition: all 0.5s ease;
+        border: 10px #1976D2 solid;
         color: white;
         margin: 30px 20px;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1vw;
     }
     .carte-todoNot{
-        background-color: red;
+        background-color: #4FC3F7;
+        transition: all 0.5s ease;
+        border: 10px #1976D2 solid;
         color: white;
         margin: 30px 20px;
         padding: 20px;
-        border-radius: 10px;
+        border-radius: 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
