@@ -66,7 +66,11 @@ class Todo {
     };
     supprimer(div){
         div.remove()
-        Todo.todoListe.splice(Todo.todoListe.indexOf(div),1)
+        // Todo.todoListe.splice(Todo.todoListe.indexOf(div),1)
+        const index = Todo.todoListe.findIndex(todo => todo.div === div);
+        if (index !== -1) {
+            Todo.todoListe.splice(index, 1);
+        }
     }
     modifier(div,buttonR,buttonP,text){
         let inputModif = document.createElement('input');
