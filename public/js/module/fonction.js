@@ -2,7 +2,7 @@ import { Todo } from "./class.js";
 import { divContent } from '../main.js'
 // function
 function add(contenu){
-    let tudo = new Todo(contenu)
+    new Todo(contenu)
 }
 function all(){
     Todo.todoListe.forEach(element => {

@@ -2,7 +2,7 @@
 let style = document.createElement('style')
 style.innerHTML = `
     body{
-        background: linear-gradient(270deg, rgb(88, 39, 48),rgb(12, 52, 63));
+        background: linear-gradient(300deg, rgb(88, 39, 48),rgb(12, 52, 63));
         background-size: 400% 400%;
         background-repeat: no-repeat;
         animation: bgStyler 10s linear infinite alternate;
@@ -102,10 +102,10 @@ style.innerHTML = `
     /* animation */
     @keyframes bgStyler{
         0% {
-        background-position: 0% 50%;
+            background-position: 0% 25%;
         }
         100% {
-            background-position: 100% 50%;
+            background-position: 100% 75%;
         }
     }
     @keyframes bgStylerMobile {

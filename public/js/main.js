@@ -59,14 +59,14 @@ div_grosButton.id='but'
 // class
 divInput.classList.add('miseForm')
 div_grosButton.classList.add('miseForm')
-
 divForm.addEventListener('click', (e)=>{
     switch (e.target) {
         case buttonAdd:
             if (!inputForm.value) {
                 alert('rentrer une valeur valide')
             } else {
-                add(inputForm.value)
+                add(inputForm.value);
+                inputForm.value="";
             break;
             }
         case buttonFini:
